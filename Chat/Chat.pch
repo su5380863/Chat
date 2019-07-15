@@ -1,0 +1,66 @@
+//
+//  PrefixHeader.pch
+//  Chat
+//
+//  Created by su_fyu on 2019/6/30.
+//  Copyright © 2019年 su_fyu. All rights reserved.
+//
+#import "ChatTools.h"
+#import "UIColor+Utility.h"
+#import "NSString+RectSize.h"
+#import "UIImage+Utilities.h"
+#import "UIButton+CommonBtn.h"
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#define CUSTOMHEBCOLOR(value)  ([UIColor hexRGB:(value)])
+
+
+#define AppLicationWindow             (((AppDelegate *)[UIApplication sharedApplication].delegate).window)
+
+#define AppRootViewController         (AppLicationWindow.rootViewController)
+
+#define CommonTextColor CUSTOMHEBCOLOR(0xfca61b)
+
+#define UserSelf @"123"
+#define ToUser @"456"
+
+#pragma mark ------------缓存文件夹---------------------
+#define MaxVoiceTime       60  //语音录制最大秒数
+#define UUSoundFileCache        @"Sound" //语音缓存文件夹路径
+#define UUImageFileCache        @"Image" //图片缓存文件夹路径
+#define MAMovieFileCache        @"Movie" //视频缓存
+
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define IOS7 ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)
+#define IOS8 ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0)
+#define IOS9 ([[UIDevice currentDevice].systemVersion floatValue] >= 9.0)
+#define UNIOS9 ([[UIDevice currentDevice].systemVersion floatValue] < 9.0)
+
+#define kIs_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ?  YES : NO)
+
+#define Iphone5_Width           320
+#define Iphone5_Height          568
+
+#define Iphone6_Width           375
+#define Iphone6_Height          667
+
+#define autoSacleX  ScreenWidth / Iphone6_Width;
+#define autoSacleY  ScreenHeight / Iphone6_Height;
+
+#define kApplicationFrameWidth ([UIScreen mainScreen].applicationFrame.size.width)
+#define kApplicationFrameHeight ([UIScreen mainScreen].applicationFrame.size.height)
+
+#define MAImgWidth60 60*autoSacleX
+#define MAImgWidth120 120*autoSacleX
+#define MAImgWidth300 300*autoSacleX
+
+
+#endif /* PrefixHeader_pch */
